@@ -19,11 +19,11 @@ def guardian_combat():
     global characterLife
     import random
     attack = random.randint(1, 100)
-    if attack >= 60:
+    if attack >= 40:
         print("Guardian hits you with his sword")
         characterLife -= 10
         print("Your life now is " + str(characterLife) + "\n ")
-    if attack >= 10 and attack < 60:
+    if attack >= 10 and attack < 40:
         print("Guardian hits you with a heavy thrust")
         characterLife -= 20
         print("Your life now is " + str(characterLife) + "\n ")
