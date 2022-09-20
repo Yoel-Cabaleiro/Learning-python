@@ -10,11 +10,14 @@ def combat_menu():
     if takeAction == 1:
         character_combat()
     if takeAction == 2:
-        print("You embrace a defensive position. You heal up 25 HP")
-        characterLife += 25
-        print("Your life now is " + str(characterLife) + "\n ")
+        print("You embrace a defensive position. You heal up to 25 HP")
+        if characterLife > 75:
+            print("Your life is now 100\n ")
+            characterLife = 100
+        else:
+            characterLife += 25
+            print("Your life now is " + str(characterLife) + "\n ")
             
-
 def guardian_combat():
     global characterLife
     import random
@@ -31,8 +34,7 @@ def guardian_combat():
         print("Guardian fiercely swing his sword towards your face. It's a critical hit!")
         characterLife -= 40
         print("Your life now is " + str(characterLife) + "\n ")
-        
-
+      
 def character_combat():
     global guardianLife
     import random
@@ -44,17 +46,12 @@ def character_combat():
         print("You hit your foe with your axe\n ")
         guardianLife -= 10
 
-
-while characterLife > 0 and guardianLife > 0:
+while characterLife > 0:
     combat_menu()
-    if characterLife <= 0:
-        break
     if guardianLife <= 0:
         break
     guardian_combat()
     
-    
-
 if characterLife <= 0:
     print("You died")
 if guardianLife <= 0:
