@@ -12,7 +12,7 @@ def combat_menu():
     if takeAction == 2:
         print("You embrace a defensive position. You heal up to 25 HP")
         if characterLife > 75:
-            print("Your life is now 100\n ")
+            print("Your life now is 100\n ")
             characterLife = 100
         else:
             characterLife += 25
