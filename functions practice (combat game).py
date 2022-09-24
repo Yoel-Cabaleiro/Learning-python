@@ -24,7 +24,10 @@ while input("Do you want to fight? [y/n]\n ") == "y":
             else:
                 characterLife += 25
                 print("Your life now is " + str(characterLife) + "\n ")
-                
+        else:
+            print("Invalid action")
+            combat_menu()
+            
     def guardian_combat():
         global characterLife
         import random
